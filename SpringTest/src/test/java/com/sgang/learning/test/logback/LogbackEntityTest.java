@@ -1,4 +1,4 @@
-package com.sgang.test.junit;
+package com.sgang.learning.test.logback;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -6,13 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.sgang.learning.junit.JunitEntity;
+import com.sgang.learning.logback.LogbackEntity;
 
 /**
- * 第一个Juit测试类.
- * <p>
- * Junit依赖的jar包：junit、spring-test
  * 
+ * LogbackEntity对应的测试类.
  * 
  * 
  * @author zj
@@ -21,15 +19,17 @@ import com.sgang.learning.junit.JunitEntity;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:conf/applicationContext.xml" })
-public class FirstJuitTest {
+public class LogbackEntityTest {
 
 	@Autowired
-	JunitEntity junitEntity;
+	LogbackEntity logbackEntity;
 
 	@Test
 	public void test() {
 		
-		junitEntity.printName();
+		logbackEntity.printMessage();
 		
 	}
+	
+	
 }

@@ -3,4 +3,4 @@
  * @author zj
  *
  */
-package com.sgang.junit.first;
+package com.sgang.learning.junit;
