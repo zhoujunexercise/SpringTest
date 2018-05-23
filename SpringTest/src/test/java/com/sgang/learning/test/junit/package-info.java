@@ -4,4 +4,4 @@
  * @author zj
  *
  */
-package com.sgang.test.junit;
+package com.sgang.learning.test.junit;

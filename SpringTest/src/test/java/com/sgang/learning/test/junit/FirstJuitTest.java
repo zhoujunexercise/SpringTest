@@ -1,4 +1,4 @@
-package com.sgang.test.junit;
+package com.sgang.learning.test.junit;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
