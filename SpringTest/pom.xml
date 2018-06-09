@@ -18,6 +18,27 @@
 			<artifactId>spring-context</artifactId>
 			<version>5.0.6.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>5.0.6.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.9.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.9.1</version>
+		</dependency>
+		<!--  
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>3.2.6</version>
+		</dependency>-->
 		<!-- logback-classic包含了logback本身所需的slf4j-api.jar、logback-core.jar及logback-classsic.jar -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
