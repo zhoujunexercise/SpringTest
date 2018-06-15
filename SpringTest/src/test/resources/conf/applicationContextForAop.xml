@@ -17,9 +17,36 @@
 
 	<!--START 基于配置的AOP -->
 	<aop:config>
+		<!--定义切面 -->
 		<aop:aspect id="sgangAspectAop" ref="sgangAspect">
-			<aop:pointcut id="sgangPointcut" expression="execution(* com.sgang.learning.aop.service.BusinessService.*(..))"></aop:pointcut>
+			<!-- 定义切入点 -->
+			<aop:pointcut id="sgangPointcut"
+				expression="execution(* com.sgang.learning.aop.service.BusinessService.*(..))"></aop:pointcut>
+			<!-- 定义连接点 -->
+			<!-- 执行方法之前 -->
 			<aop:before method="before" pointcut-ref="sgangPointcut"></aop:before>
+			<!-- 方法返回后 -->
+			<aop:after-returning method="afterRetruning"
+				pointcut-ref="sgangPointcut"></aop:after-returning>
+			<!-- 方法执行完后，类似于finally,若 after标签顺序写在afterRetruning标签前面，则先执行after -->
+			<aop:after method="after" pointcut-ref="sgangPointcut"></aop:after>
+		</aop:aspect>
+
+		<aop:aspect id="sgangAspectAopForException"
+			ref="sgangAspect">
+			<!-- 定义切入点 -->
+			<aop:pointcut id="sgangPointcutForException"
+				expression="execution(* com.sgang.learning.aop.service.ExceptionBusinessService.*(..))"></aop:pointcut>
+			<!-- 定义连接点 -->
+			<!-- 方法返回后,对于抛出异常的方法，该连接点不会被执行 -->
+			<aop:after-returning method="afterRetruning"
+				pointcut-ref="sgangPointcutForException"></aop:after-returning>
+			<!-- 程序抛出异常后执行,类似catch -->
+			<aop:after-throwing method="afterThorwing"
+				pointcut-ref="sgangPointcutForException"></aop:after-throwing>
+			<!-- 方法执行完后，类似于finally，抛出异常也会执行，若 after标签顺序写在afterThorwing标签前面，则先执行after -->
+			<aop:after method="after"
+				pointcut-ref="sgangPointcutForException"></aop:after>
 		</aop:aspect>
 
 	</aop:config>

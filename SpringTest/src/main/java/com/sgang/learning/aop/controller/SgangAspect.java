@@ -20,9 +20,23 @@ public class SgangAspect {
 	
 	public void before()
 	{
-		
 		logger.info("SgangAspect before method!");
-		
+	}
+	
+	public void afterRetruning()
+	{
+		logger.info("SgangAspect afterRetruning method!");
+	}
+	
+	
+	public void after()
+	{
+		logger.info("SgangAspect after method!");
+	}
+	
+	public void afterThorwing()
+	{
+		logger.info("SgangAspect afterThorwing method!");
 	}
 	
 }
