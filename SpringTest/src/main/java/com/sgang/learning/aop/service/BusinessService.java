@@ -20,4 +20,10 @@ public class BusinessService {
 	{
 		logger.info("BusinessService doService method");
 	}
+	
+	
+	public void doParmeterService(String userNmae,int age)
+	{
+		logger.info("do service +" +userNmae+":" +age);
+	}
 }

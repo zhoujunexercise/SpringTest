@@ -54,6 +54,14 @@ public class SgangAspectTest {
 		
 	}
 	
+	@Test
+	public void testAroundParameter()
+	{
+		businessService.doParmeterService("zj", 1);
+		
+	}
+	
+	
 	
 	
 }

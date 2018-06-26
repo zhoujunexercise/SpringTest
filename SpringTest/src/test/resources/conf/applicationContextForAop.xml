@@ -30,6 +30,8 @@
 				pointcut-ref="sgangPointcut"></aop:after-returning>
 			<!-- 方法执行完后，类似于finally,若 after标签顺序写在afterRetruning标签前面，则先执行after -->
 			<aop:after method="after" pointcut-ref="sgangPointcut"></aop:after>
+			<!-- 环绕通知，通知方法的第一个参数必须是ProceedingJoinPoint类型 -->
+			<aop:around method="aRound" pointcut-ref="sgangPointcut"/>
 		</aop:aspect>
 
 		<aop:aspect id="sgangAspectAopForException"
@@ -47,6 +49,15 @@
 			<!-- 方法执行完后，类似于finally，抛出异常也会执行，若 after标签顺序写在afterThorwing标签前面，则先执行after -->
 			<aop:after method="after"
 				pointcut-ref="sgangPointcutForException"></aop:after>
+		</aop:aspect>
+		
+		<aop:aspect id="sgangAspectAopForAround"
+			ref="sgangAspect">
+			<!-- 定义切入点 -->
+			<aop:pointcut id="sgangPointcutForAround"
+				expression="execution(* com.sgang.learning.aop.service.BusinessService.doParmeterService(String,int))  and args(userNmae,age)"></aop:pointcut>
+			<!-- 定义连接点 -->
+			<aop:around method="aRoundInit" pointcut-ref="sgangPointcutForAround"/>
 		</aop:aspect>
 
 	</aop:config>
