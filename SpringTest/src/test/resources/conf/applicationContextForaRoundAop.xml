@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	    http://www.springframework.org/schema/beans/spring-beans.xsd
+	    http://www.springframework.org/schema/aop
+	    http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+
+	<context:component-scan base-package="com.sgang"></context:component-scan>
+
+
+	<!--START 基于配置的AOP -->
+	<aop:config>
+		<!--定义切面 -->
+		<aop:aspect id="sgangAspectARoundAop" ref="aroundAspect">
+			<!-- 定义切入点 -->
+			<aop:pointcut id="sgangPointcut"
+				expression="execution(* com.sgang.learning.aop.service.AroudBusinessService.*(..))"></aop:pointcut>
+			<!-- 定义连接点 -->
+			<!-- 环绕通知，通知方法的第一个参数必须是ProceedingJoinPoint类型 -->
+			<aop:around method="doRoundConcurrentOperation" pointcut-ref="sgangPointcut"/>
+		</aop:aspect>
+
+
+	</aop:config>
+
+
+	<!--END 基于配置的AOP -->
+</beans>

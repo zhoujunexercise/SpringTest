@@ -57,6 +57,7 @@
 			<aop:pointcut id="sgangPointcutForAround"
 				expression="execution(* com.sgang.learning.aop.service.BusinessService.doParmeterService(String,int))  and args(userNmae,age)"></aop:pointcut>
 			<!-- 定义连接点 -->
+			<!-- 环绕通知，作用在具体方法上 -->
 			<aop:around method="aRoundInit" pointcut-ref="sgangPointcutForAround"/>
 		</aop:aspect>
 
