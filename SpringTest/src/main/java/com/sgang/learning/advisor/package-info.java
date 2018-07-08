@@ -1,7 +1,8 @@
 /**
  *面向切面的编程Advisor.
  *<p>
- *Advisor是Pointcut和Advice的配置器，它包括Pointcut和Advice
+ *Advisor是Pointcut和Advice的配置器，它包括Pointcut和Advice，
+ *区分Advisor  和Advice
  * 
  * @author zj
  *
