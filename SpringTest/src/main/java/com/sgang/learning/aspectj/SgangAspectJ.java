@@ -18,6 +18,7 @@ import org.springframework.stereotype.Component;
  * 使用注解的方式，实现AspectJ，使用@Aspect注解必须配合@Component，否则无法使用自动注入.
  * 在此类中可以定义Advice（通知）和Pointcut（切入点）.
  * 
+ * 对应Service为UserService.java
  * @author zj_home
  *
  */
@@ -26,7 +27,6 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class SgangAspectJ {
 
-	int a =0;
 	private final static Logger logger = LoggerFactory.getLogger(SgangAspectJ.class);
 	
 	//定义一个公共的切入点，多个方法都可使用这个切入点表达式,切入点为com.sgang.learning.aspectj.service.UserService下的所有方法

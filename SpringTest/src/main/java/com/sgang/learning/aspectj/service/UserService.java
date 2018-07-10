@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 /**
- * 用户Service.
+ * 用户Service.对应SgangAspectJ.java
  * 
  * 
  * 

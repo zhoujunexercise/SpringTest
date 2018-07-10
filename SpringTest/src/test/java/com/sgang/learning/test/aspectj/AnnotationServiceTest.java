@@ -8,38 +8,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.sgang.learning.aspectj.service.UserService;
+import com.sgang.learning.aspectj.service.AnnotationService;
 
 /**
- * SgangAspectJ≤‚ ‘¿‡.
+ * 
+ * AnnotationService≤‚ ‘¿‡.
  * 
  * 
  * @author zj
  *
  */
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:conf/applicationContextForAspectj.xml" })
-public class SgangAspectJTest {
+public class AnnotationServiceTest {
 
-	private final static Logger logger = LoggerFactory.getLogger(SgangAspectJTest.class);
+private final static Logger logger = LoggerFactory.getLogger(SgangAspectJTest.class);
 	
 	@Autowired
-	UserService  userService;
+	AnnotationService  annotationService;
 	
 	@Test
 	public void testdoService()
 	{
 		String userName="xiao fang";
-		userService.doService(userName);
+		annotationService.save(userName);
 		logger.info("end1");
-		int age =10;
-		userService.doService(userName,age);
-		logger.info("end2");
-		
-		userService.doMethod(userName);
-
-		userService.doService();
 		
 	}
 	
