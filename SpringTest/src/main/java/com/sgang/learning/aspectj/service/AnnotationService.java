@@ -19,7 +19,7 @@ public class AnnotationService {
 
 	private final static Logger logger = LoggerFactory.getLogger(AnnotationService.class);
 	
-	@MoocMethod("MoocMethod save")
+	@MoocMethod(value="MoocMethod save")
 	public String save(String name)
 	{
 		logger.info("AnnotationService.save:" +name);

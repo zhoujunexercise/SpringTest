@@ -14,7 +14,6 @@ import java.lang.annotation.Target;
  * @author zj
  *
  */
-
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface MoocMethod {

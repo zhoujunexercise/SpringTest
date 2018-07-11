@@ -21,16 +21,17 @@ public class AnnotationAspectJ {
 
 	private final static Logger logger = LoggerFactory.getLogger(AnnotationAspectJ.class);
 	
-	@Pointcut("execution(* com.sgang.learning.aspectj.service.AnnotationService.*(..)) && @Annotation(moocMethod)")
+	@Pointcut(value="execution(* com.sgang.learning.aspectj.service.AnnotationService.*(..)) && @annotation(moocMethod)" ,argNames="moocMethod")
 	public void pointCut(MoocMethod moocMethod) {
 		
 		
 	}
 	
 	@Before(value="pointCut(moocMethod)")
-	public void before()
+	public void before(MoocMethod moocMethod)
 	{
-		logger.info("AnnotationAspectJ.before");
+		
+		logger.info("AnnotationAspectJ.before"+moocMethod.value());
 		
 	}
 	
