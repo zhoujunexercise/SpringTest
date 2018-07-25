@@ -27,6 +27,7 @@ public class AnnotationAspectJ {
 		
 	}
 	
+	//获取自定义注解MoocMethod的value值
 	@Before(value="pointCut(moocMethod)")
 	public void before(MoocMethod moocMethod)
 	{
